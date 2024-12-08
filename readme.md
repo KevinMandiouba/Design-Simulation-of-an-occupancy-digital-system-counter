@@ -1,29 +1,55 @@
 # 🎛️ Design and Simulation of an Occupancy Digital System Counter
 
-This project contains the files for the COEN 313 course (Summer 2024). It includes VHDL code, testbenches, constraints, and various logs and results for the design and simulation of an occupancy digital system counter.
+This repository contains the design, simulation, and implementation files for a **Digital Occupancy Counter**. Developed for the COEN 313 course, the project uses **VHDL** to design a system capable of counting the number of people entering and leaving a room. The counter also enforces maximum occupancy and prevents negative counts.
 
-## 📦 Project Deliverables
-- **project.vhd**: Main VHDL code for the program
-- **testbench.vhd**: Testbench of the program
-- **project.xdc**: Constraints file used for implementation and synthesis on Vivado
-- **project.do**: Do file used for the Modelsim simulation
-- **vivado.log**: Vivado log
-- **synthesis.log**: Synthesis log from Vivado
-- **project_results.pdf**: Contains the Modelsim testbench waves trial
-- **project_simulation.png**: Contains the Vivado testbench waves trial
-- **synthesized_project.pdf**: Synthesized design schematic from Vivado
-- **elaborated_project.pdf**: Elaborated design schematic from Vivado
+---
+
+## 🌟 Project Overview
+
+The **Occupancy Counter**:
+- Increments the count when a person enters the room.
+- Decrements the count when a person leaves the room.
+- Activates a red light when the room is full.
+- Resets the count to zero when a reset signal is triggered.
+
+**Key Features**:
+- Implements increment and decrement logic using multiplexers and comparators.
+- Synchronizes all operations with a clock signal.
+- Validates functionality through simulation in ModelSim and Xilinx Vivado.
+
+---
+
+## 📂 Project Files
+
+### 🔑 Core Files
+- **`project.vhd`**: VHDL code for the counter logic.
+- **`testbench.vhd`**: Testbench to validate functionality through simulations.
+- **`project.xdc`**: Constraints file for synthesis and implementation in Vivado.
+- **`project.do`**: Simulation script for ModelSim.
+
+### 📈 Logs and Results
+- **`synthesis.log`**: Log of the synthesis process.
+- **`project_results.pdf`**: Contains waveform outputs from simulations.
+- **`synthesized_project.pdf`**: Synthesized schematic design.
+- **`elaborated_project.pdf`**: Elaborated design schematic.
+
+### 📷 Visuals
+- **Simulation Waveform**:  
+  ![Simulation Waveform](project_simulation.png)
+
+---
 
 ## 🛠️ Setup Instructions
-### 📄 Modelsim
-1. Compile the main VHDL code file and testbench file.
-2. Run the following command to get the transcripts and wave:
-```sh
-vsim -do project.do project &
+
+### 📄 ModelSim Simulation
+1. Open ModelSim and load the `project.vhd` and `testbench.vhd` files.
+2. Run the script with the command:
+```bash
+vsim -do project.do
 ```
-### 📊 Vivado
+
+### 📊 Vivado Setup
 1. Open Vivado and create a new project.
-2. Add the `project.vhd` and `project.xdc` files to the project.
+2. Add the files **`project.vhd`** and **`project.xdc`**.
 3. Run synthesis and implementation.
-4. Generate the bitstream.
-5. Open the synthesized design to view the schematic.
+4. Generate the bitstream and verify the design using the synthesized schematic.
