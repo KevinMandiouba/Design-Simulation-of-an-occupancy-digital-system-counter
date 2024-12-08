@@ -15,13 +15,13 @@ This project contains the files for the COEN 313 course (Summer 2024). It includ
 - **elaborated_project.pdf**: Elaborated design schematic from Vivado
 
 ## 🛠️ Setup Instructions
-### Modelsim
+### 📄 Modelsim
 1. Compile the main VHDL code file and testbench file.
 2. Run the following command to get the transcripts and wave:
 ```sh
 vsim -do project.do project &
 ```
-### Vivado
+### 📊 Vivado
 1. Open Vivado and create a new project.
 2. Add the `project.vhd` and `project.xdc` files to the project.
 3. Run synthesis and implementation.
